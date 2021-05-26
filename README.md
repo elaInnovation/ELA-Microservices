@@ -4,4 +4,7 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
 - [Introduction](#introduction)
 
 ## Introduction
-ELA developped different microservices to create interfaces with the hardware provided. You can find all usefull informations in our products by visiting our website (here)[https://elainnovation.com]. 
+ELA developped different microservices to create interfaces with the hardware provided. You can find all usefull informations in our products by visiting our website (here)[here_ela_website]. 
+
+
+[here_ela_website]: https://elainnovation.com
