@@ -44,7 +44,7 @@ The **Wirepas Base Module** allow you to communicate with the **ELA Blue Mesh De
 - Stop Wirepas Dataflow: cancel the streaming dataflow and disconnec from the MQTT Broker
 - Send a command to a Specific Tag: use the MQTT broker to publish command on the Wirepas network. The commands are the one implemented into **ELA Blue Mseh Device**
 
-This service 
+This service needs a broker MQTT deployed where data are provided by Wirepas Gateway which publish on it. You can directly have your own instance deployed locally or not. You can find some sample on our github to deploy one on a raspberry pi by following [this link](https://github.com/elaInnovation/mqttbroker-rpi-install).
 
 ![here_schematics](https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Wirepas_Microservice_archi_2021.png)
 
