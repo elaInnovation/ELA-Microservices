@@ -57,6 +57,13 @@ We use docker to package our application or microservices and its dependencies i
 ### Raspbian
 We prepared a raspberry with a raspbian console image that you can find [here][here_raspbian] (raspios buster i386). Before deploying the container, you need to install all the tools requiered to use **docker** and **docker-compose** on your raspberry.  To do the job, you can follow the procedure just below. 
 
+*** Info : We install using the convenience script ***
+
+```bash
+ curl -fsSL https://get.docker.com -o get-docker.sh
+ sudo sh get-docker.sh
+```
+
 ***source from docker website : [here](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script)***
 
 On our side, we test it on the following raspberry:
