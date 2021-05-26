@@ -46,6 +46,8 @@ The **Wirepas Base Module** allow you to communicate with the **ELA Blue Mesh De
 
 This service 
 
+![here_schematics](https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Wirepas_Microservice_archi_2021.png)
+
 You can find all the documentation, datasheet, functionnalities available from our **Blue Mesh Devices** directly on our [website][here_ela_website].
 
 ## Docker
