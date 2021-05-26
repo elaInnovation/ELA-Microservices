@@ -7,6 +7,7 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
   - [Bluetooth](#bluetooth)
   - [Wirepas](#wirepas)
 - [Docker](#docker)
+  - [Raspbian](#raspbian)
 - [Deployment](#deployement)
 
 ## Introduction
@@ -51,7 +52,17 @@ This service needs a broker MQTT deployed where data are provided by Wirepas Gat
 You can find all the documentation, datasheet, functionnalities available from our **Blue Mesh Devices** directly on our [website][here_ela_website].
 
 ## Docker
-TODO
+We use docker to package our application or microservices and its dependencies in a virtual container that can run on Linux computer (more compatibilities will be provided soon). We don't provide here a full docker tutorial, for more details or if you are not familiar with this tool, please refer to the docker [documentation here][here_docker_documentation].
+
+### Raspbian
+We prepared a raspberry with a raspbian console image that you can find [here][here_raspbian] (raspios buster i386). Before deploying the container, you need to install all the tools requiered to use **docker** and **docker-compose** on your raspberry.  To do the job, you can follow the procedure just below. 
+
+***source from docker website : [here](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script)***
+
+On our side, we test it on the following raspberry:
+- Raspberry Pi A
+- Raspberry Pi 3B+
+- Raspberry Pi 4 
 
 ## Deployment
 TODO
@@ -62,4 +73,8 @@ TODO
 
 [here_ela_docker]: https://hub.docker.com/u/elainnovation
 
+[here_docker_documentation]:https://docs.docker.com
+
 [here_grpc]: https://grpc.io
+
+[here_raspbian]: https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit
