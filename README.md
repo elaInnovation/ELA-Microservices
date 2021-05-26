@@ -23,7 +23,9 @@ Now if it's ok, we can talk about our microservices. So, we package everything u
 The main architecture of the docker we provide is the one describe the schematics below. We deliver the following services:
 - **ELA Authentication Microservice** : This is the service dedicated to the authentication.
 - **ELA Bluetooth Base Module**: This service is dedicated to the bluetooth device management for all ELA Blue Devices
-- **ELA Wirepas Module**: This servic eis dedicated to the wirepas decice management for all ELA Blue Mesh Devices  
+- **ELA Wirepas Module**: This servic eis dedicated to the wirepas decice management for all ELA Blue Mesh Devices 
+
+![here_schematics](https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Microservices_Main_archi_2021.png)
 
 ### Bluetooth
 
