@@ -14,7 +14,7 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
 - [Deployment](#deployement)
   - [Unix](#unix)
 - [Developpement](#developpement)
-  - [Microservice Description](#service-description)
+  - [Microservice Description](#microservice-description)
   - [API Description](#api-description)
 
 ## Introduction
@@ -156,9 +156,9 @@ Now, you are ready to develop by using your favorite langage. As we said, we imp
 
 But if you are not familiar with Microsoft technologes, you can use the favorite langage among the one compatible with [gRPC][here_grpc_langage]. You will find the gRPC interface for each service in our associated repository on Github elaGrpcMicroservice.
 
-## Microservice Description
+### Microservice Description
 For each service provided by ELA innovation, we will give you a complete description associated to the service and how to interract with it on client side. For more information, you can follow the different links:
-- Bluetooth Base Description
+- [Bluetooth Base Description](#https://github.com/elaInnovation/ELA-Microservices/blob/master/Documentation/Bluetooth%20Base/README.md)
 - Wirepas Base Description
 
 ### API Description
