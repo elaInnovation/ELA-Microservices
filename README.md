@@ -9,6 +9,8 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
   - [Authentication](#authentication)
 - [Docker](#docker)
   - [Raspbian](#raspbian)
+- [Docker-Compose](#docker-compose)
+  - [Raspbian](#raspbian)
 - [Deployment](#deployement)
   - [Unix](#unix)
 
@@ -83,6 +85,23 @@ On our side, we test it on the following raspberry:
 - Raspberry Pi A
 - Raspberry Pi 3B+
 - Raspberry Pi 4 
+
+## Docker-Compose
+Docker Compose relies on Docker Engine for any meaningful work, so make sure you have Docker Engine installed either locally or remote, depending on your setup.
+
+### Raspban
+To install docker-compose, you can use directly pip install. If you don't have python3 installed already, you can run the following commands:
+```bash
+sudo apt-get install libffi-dev libssl-dev
+sudo apt install python3-dev
+sudo apt-get install -y python3 python3-pip
+```
+
+Once you have python and pip installed just run the following command:
+```bash
+sudo pip3 install docker-compose
+```
+***source from docker website [here]:[https://docs.docker.com/compose/install/]***
 
 ## Deployment
 
