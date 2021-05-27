@@ -10,6 +10,7 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
 - [Docker](#docker)
   - [Raspbian](#raspbian)
 - [Deployment](#deployement)
+  - [Unix](#unix)
 
 ## Introduction
 ELA developped different microservices to create interfaces with the hardware provided. You can find all usefull informations in our products by visiting our website [here][here_ela_website]. But once you get the products, you can find here something helping you to integrate and get the information from our devices. By using our [github][here_ela_github], you can find samples in different langage to understand how you can integrate it on your side. But we provided two some [docker][here_ela_docker] to get our microservices on different technologies to garantee to get the information from our tags. 
@@ -84,7 +85,12 @@ On our side, we test it on the following raspberry:
 - Raspberry Pi 4 
 
 ## Deployment
-TODO
+
+### Unix
+Now all components are installed, we can use **docker-compose** to deply it on your computer. To proceed, you just need to execute the following command to deploy the requiered containers.
+```bash
+  docker-compose up -d
+```
 
 [here_ela_website]: https://elainnovation.com
 
