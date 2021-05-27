@@ -89,7 +89,7 @@ On our side, we test it on the following raspberry:
 ## Docker-Compose
 Docker Compose relies on Docker Engine for any meaningful work, so make sure you have Docker Engine installed either locally or remote, depending on your setup.
 
-### Raspban
+### Raspbian
 To install docker-compose, you can use directly pip install. If you don't have python3 installed already, you can run the following commands:
 ```bash
 sudo apt-get install libffi-dev libssl-dev
