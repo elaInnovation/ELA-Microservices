@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  msauthentication:
+    image: "elainnovation/authentication:1.0"
+    restart: always
+    ports:
+      - "50050:50050"
+  msbluetooth:
+    image: "elainnovation/bluetooth:1.0"
+    restart: always
+    network_mode: "host"
+    privileged: true
+    depends_on:
+      - "msauthentication"
+    environment:
+      - HOME="/home/pi/"
+    devices:
+      - "/dev/ttyAMA0:/dev/ttyAMA0"
+      - "/dev/vcio:/dev/vcio"
+  mswirepas:
+    image: "elainnovation/wirepas:1.0"
+    restart: always
+    ports:
+      - "50052:50052"
+    depends_on:
+      - "msauthentication"
