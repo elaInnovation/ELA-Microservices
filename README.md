@@ -8,7 +8,7 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
   - [Wirepas](#wirepas)
   - [Authentication](#authentication)
 - [Docker](#docker)
-  - [Raspbian](#raspbian)
+  - [Raspbian (install docker)](#raspbian-install-docker)
 - [Docker-Compose](#docker-compose)
   - [Raspbian (install docker-compose)](#raspbian-install-docker-compose)
 - [Deployment](#deployement)
@@ -65,7 +65,7 @@ The **Authentication Module** has no public interface and you won't connect dire
 ## Docker
 We use docker to package our application or microservices and its dependencies in a virtual container that can run on Linux computer (more compatibilities will be provided soon). We don't provide here a full docker tutorial, for more details or if you are not familiar with this tool, please refer to the docker [documentation here][here_docker_documentation].
 
-### Raspbian
+### Raspbian (install docker)
 We prepared a raspberry with a raspbian console image that you can find [here][here_raspbian] (raspios buster i386). Before deploying the container, you need to install all the tools requiered to use **docker** and **docker-compose** on your raspberry.  To do the job, you can follow the procedure just below. 
 
 ***Info : We install using the convenience script***
@@ -101,12 +101,16 @@ Once you have python and pip installed just run the following command:
 ```bash
 sudo pip3 install docker-compose
 ```
-***source from docker website [here]:[https://docs.docker.com/compose/install/]***
+***source from docker website [here](https://docs.docker.com/compose/install/)***
 
 ## Deployment
+Before starting the deployment using **docker-compose**, you need to clone this repository. You will find the yml file necessary go further and use our docker. So, if you haven't already clone:
+```bash
+  git clone https://github.com/elaInnovation/ELA-Microservices.git
+```
 
 ### Unix
-Now all components are installed, we can use **docker-compose** to deply it on your computer. To proceed, you just need to execute the following command to deploy the requiered containers.
+Now all components are installed, we can use **docker-compose** to deploy it on your computer. Go into your clone directory where the yml file : **docker-compose.yml**. To proceed, you just need to execute the following command to deploy the requiered containers.
 ```bash
   docker-compose up -d
 ```
