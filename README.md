@@ -66,7 +66,7 @@ The **Authentication Module** has no public interface and you won't connect dire
 We use docker to package our application or microservices and its dependencies in a virtual container that can run on Linux computer (more compatibilities will be provided soon). We don't provide here a full docker tutorial, for more details or if you are not familiar with this tool, please refer to the docker [documentation here][here_docker_documentation].
 
 ### Raspbian (install docker)
-We prepared a raspberry with a raspbian console image that you can find [here][here_raspbian] (raspios buster i386). Before deploying the container, you need to install all the tools requiered to use **docker** and **docker-compose** on your raspberry.  To do the job, you can follow the procedure just below. 
+We prepared a raspberry with a raspbian console image that you can find [here][here_raspbian] (raspios buster arm). Before deploying the container, you need to install all the tools requiered to use **docker** and **docker-compose** on your raspberry.  To do the job, you can follow the procedure just below. 
 
 ***Info : We install using the convenience script***
 ```bash
