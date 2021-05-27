@@ -13,6 +13,8 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
   - [Raspbian (install docker-compose)](#raspbian-install-docker-compose)
 - [Deployment](#deployement)
   - [Unix](#unix)
+- [Developpement](#developpement)
+  - [API Description](#api-desciption)
 
 ## Introduction
 ELA developped different microservices to create interfaces with the hardware provided. You can find all usefull informations in our products by visiting our website [here][here_ela_website]. But once you get the products, you can find here something helping you to integrate and get the information from our devices. By using our [github][here_ela_github], you can find samples in different langage to understand how you can integrate it on your side. But we provided two some [docker][here_ela_docker] to get our microservices on different technologies to garantee to get the information from our tags. 
@@ -30,7 +32,9 @@ The main architecture of the docker we provide is the one describe the schematic
 - **ELA Bluetooth Base Module**: This service is dedicated to the bluetooth device management for all **ELA Blue** Devices
 - **ELA Wirepas Module**: This servic eis dedicated to the wirepas decice management for all **ELA Blue Mesh** Devices 
 
-![here_schematics](https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Microservices_Main_archi_2021.png)
+<p align="center">
+  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Microservices_Main_archi_2021.png">
+</p>
 
 All this package is available by using docker compose. But to use the different modules, you need to contat ELA innovation to get a certificate which allow you to use the microservices. This certificate allow you to connect to a service and use the main functionnalities provided by the API. We will talk about the authentication module and the role later in the documentation.
 
@@ -51,7 +55,9 @@ The **Wirepas Base Module** allow you to communicate with the **ELA Blue Mesh De
 
 This service needs a broker MQTT deployed where data are provided by Wirepas Gateway which publish on it. You can directly have your own instance deployed locally or not. You can find some sample on our github to deploy one on a raspberry pi by following [this link](https://github.com/elaInnovation/mqttbroker-rpi-install).
 
-![here_schematics](https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Wirepas_Microservice_archi_2021.png)
+<p align="center">
+  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Wirepas_Microservice_archi_2021.png">
+</p>
 
 You can find all the documentation, datasheet, functionnalities available from our **Blue Mesh Devices** directly on our [website][here_ela_website].
 
@@ -60,7 +66,9 @@ The **Authentication Module** has no public interface and you won't connect dire
 - Calling the function **StartBluetoothListening** without calling **Connect** will return you an error code ACCESS DENIED
 - Before Calling any function you have call **Connect** function with your identifiant to authenticate and use each function from the API 
 
-![here_schematics](https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png)
+<p align="center">
+  <img width="460" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png">
+</p>
 
 ## Docker
 We use docker to package our application or microservices and its dependencies in a virtual container that can run on Linux computer (more compatibilities will be provided soon). We don't provide here a full docker tutorial, for more details or if you are not familiar with this tool, please refer to the docker [documentation here][here_docker_documentation].
@@ -109,26 +117,48 @@ Before starting the deployment using **docker-compose**, you need to clone this 
   git clone https://github.com/elaInnovation/ELA-Microservices.git
 ```
 
-### Unix
+#### Unix
 Now all components are installed, we can use **docker-compose** to deploy it on your computer. Go into your clone directory where the yml file : **docker-compose.yml**. To proceed, you just need to execute the following command to deploy the requiered containers.
 ```bash
   cd ELA-Microservices/
   docker-compose up -d
 ```
 
+If the installation success, now you can run the **docker ps** command to list the container installed on your computer.
+| CONTAINER ID | IMAGE | COMMAND | PORTS |NAMES |
+| ---  | --- | --- | --- | --- |
+| 44887022ce2a | elainnovation/wirepas:1.0 | "/usr/bin/entry_wire…" | 1883/tcp, 0.0.0.0:50052->50052/tcp, :::50052->50052/tcp | ela-microservices_mswirepas_1 |
+| 3a34d58bbce5 | elainnovation/bluetooth:1.0 | "/usr/bin/entry_blue…" | | ela-microservices_msbluetooth_1 |
+| 405d0a79afce | elainnovation/authentication:1.0 | "/usr/bin/entry_auth…" | 0.0.0.0:50050->50050/tcp, :::50050->50050/tcp | ela-microservices_msauthentication_1 |
+
 Then before rebooting your computer and finish the installation, you need to update your local configuration to kill the bluetooth to allow the container get it at startup. To proceed:
 ```bash
-  sudo nano /etc/local.rc
+  sudo nano /etc/rc.local
 ```
 
-Then paste the followig lines into the file and save it when you leave nano.
+Then paste the followig lines into the file and save it when you leave nano. This line must be pasted between **fi** (end of the condition if) and the the last line with **exit 0**.
 ```text
-  sleep(5)
-  sudo killall -9 bluetoothd
-  sudo docker restart ela-docker_msbluetooth_1
+sleep 15
+sudo killall -9 bluetoothd
+sudo docker restart ela-docker_msbluetooth_1
 ```
 
 Then you can restart your computer to finish the installation and then, you're ready to use our microservices and develop with them on your raspbian device.
+```bash
+  sudo reboot -h now
+```
+
+Once your device reboot, you are ready to start your developpement using our micorservices!
+
+## Developpement
+Now, you are ready to develop by using your favorite langage. As we said, we implement the server side into our microservices to get and package the data. Now you can developp the client side to get the data. There, you have many possibilities to do the job. If you are familiar with Microsoft technologies (C# and .NetCore), we have some stuff to share with you on our [nuget repository][here_ela_nuget].
+
+But if you are not familiar with Microsoft technologes, you can use the favorite langage among the one compatible with [gRPC][here_grpc_langage]. You will find the gRPC interface for each service in our associated repository on Github elaGrpcMicroservice.
+
+### API Description
+Here we are, you can find all information relative to each service by following the different link below according to the module you want interract with.
+- Bluetoot Base
+- Wirepas Base
 
 [here_ela_website]: https://elainnovation.com
 
@@ -140,4 +170,8 @@ Then you can restart your computer to finish the installation and then, you're r
 
 [here_grpc]: https://grpc.io
 
+[here_grpc_langage]: https://grpc.io/docs/languages/
+
 [here_raspbian]: https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit
+
+[here_ela_nuget]: https://www.nuget.org/profiles/elaInnovation
