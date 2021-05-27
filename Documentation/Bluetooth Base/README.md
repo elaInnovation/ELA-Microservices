@@ -34,7 +34,7 @@ service ElaBluetoothPublicService {
   rpc GetServiceStatus(ElaCommon.ElaInputBaseRequest) returns (ElaBluetoothMicroserviceStatus) {}
 }
 ```
-You can find all the information about he API and object here.
+You can find all the information about the API and object here.
 
 Through the function available in the API, we can describe the state machine associated to the **Bluetooth Base Microservice**. 
 <p align="center">
@@ -45,4 +45,24 @@ The following schematics describe all the state:
 - **Pending**: This is the initial state of the service, when no action has been triggered the service is in Pending State.
 - **Scanning**: The scanner switch in scanning mode when **StartBluetoothListening** function called. The service leave this state if **StopBluetoothListening** called or when a connection is trigerred.
 - **Connecting**: a connection request has been received and the service try to connect to the target tag. The state is not connected while the tag and the service have no connection established.
-- **Connected**: a connection between the tag and the service has been established. While this state is maintained, the dialog is open between tag and service, try to send command and receive a respon
+- **Connected**: a connection between the tag and the service has been established. While this state is maintained, the dialog is open between tag and service, try to send command and receive a response
+
+## Authentication
+To use the different function from the API, you need use the authentication function provided in the Bluetooth Base API. Two function are here to do the authentication job:
+- Connect: provide your login and password information and get a session token to use all the functionnalities provided by Bluetooth Base API
+- Disconnect: diconnect your client from the bluetooth module and delete the availability of your session token
+```proto
+// The BackendConfig service definition.
+service ElaBluetoothPublicService {
+
+  // authentication functions
+  rpc Connect(ElaAuthentication.ElaAuthenticationRequest) returns (ElaAuthentication.ElaAuthenticationResponse) {}
+  rpc Disconnect(ElaCommon.ElaInputBaseRequest) returns (ElaCommon.ElaError) {}
+}
+```
+
+To explain how the authentication works, the schematics below explain how to use the connect and disconnect function to access to the function from the API. Between a connect and disconnect, your session token is available and you can use it to access to all the function. Otherwise, after disconnection or before connection, you cannot access to the functions.
+<p align="center">
+  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png">
+</p>
+
