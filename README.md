@@ -6,6 +6,7 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
   - [Architecture](#architecture)
   - [Bluetooth](#bluetooth)
   - [Wirepas](#wirepas)
+  - [Authentication](#authentication)
 - [Docker](#docker)
   - [Raspbian](#raspbian)
 - [Deployment](#deployement)
@@ -51,17 +52,28 @@ This service needs a broker MQTT deployed where data are provided by Wirepas Gat
 
 You can find all the documentation, datasheet, functionnalities available from our **Blue Mesh Devices** directly on our [website][here_ela_website].
 
+### Authentication
+The **Authentication Module** has no public interface and you won't connect directly to the module. However is presence allow you to use the API from the other module (Bluetooth, Wirepas ...). Before calling any function, you have to call the function Connect from an API (provided for each module) to allow your application to use the entire API. The shematics below show different call to the bluetooth module. 
+- Calling the function **StartBluetoothListening** without calling **Connect** will return you an error code ACCESS DENIED
+- Before Calling any function you have call **Connect** function with your identifiant to authenticate and use each function from the API 
+
+![here_schematics](https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png)
+
 ## Docker
 We use docker to package our application or microservices and its dependencies in a virtual container that can run on Linux computer (more compatibilities will be provided soon). We don't provide here a full docker tutorial, for more details or if you are not familiar with this tool, please refer to the docker [documentation here][here_docker_documentation].
 
 ### Raspbian
 We prepared a raspberry with a raspbian console image that you can find [here][here_raspbian] (raspios buster i386). Before deploying the container, you need to install all the tools requiered to use **docker** and **docker-compose** on your raspberry.  To do the job, you can follow the procedure just below. 
 
-*** Info : We install using the convenience script ***
-
+***Info : We install using the convenience script***
 ```bash
  curl -fsSL https://get.docker.com -o get-docker.sh
  sudo sh get-docker.sh
+```
+
+Note : after installing docker, you can encouter some permissions problems if you run **docker ps** (without sudo). We recommend to fix the issue by adding the current user to the docker group: Run this command in your favourite shell and then completely log out of your account and log back in (or exit your SSH session and reconnect, if in doubt, reboot the computer you are trying to run docker on!):
+```bash
+sudo usermod -a -G docker $USER
 ```
 
 ***source from docker website : [here](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script)***
