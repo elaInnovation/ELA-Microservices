@@ -36,7 +36,7 @@ service ElaBluetoothPublicService {
 ```
 You can find all the information about he API and object here.
 
-Through the function available in the API, we can describe the state machine associated to the **Bluetooth Base Microservice. 
+Through the function available in the API, we can describe the state machine associated to the **Bluetooth Base Microservice**. 
 <image state machine>
   
 The following schematics describe all the state:
