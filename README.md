@@ -116,6 +116,20 @@ Now all components are installed, we can use **docker-compose** to deploy it on 
   docker-compose up -d
 ```
 
+Then before rebooting your computer and finish the installation, you need to update your local configuration to kill the bluetooth to allow the container get it at startup. To proceed:
+```bash
+  sudo nano /etc/local.rc
+```
+
+Then paste the followig lines into the file and save it when you leave nano.
+```text
+  sleep(5)
+  sudo killall -9 bluetoothd
+  sudo docker restart ela-docker_msbluetooth_1
+```
+
+Then you can restart your computer to finish the installation and then, you're ready to use our microservices and develop with them on your raspbian device.
+
 [here_ela_website]: https://elainnovation.com
 
 [here_ela_github]: https://github.com/elaInnovation
