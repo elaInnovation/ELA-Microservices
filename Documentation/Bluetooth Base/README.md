@@ -37,7 +37,9 @@ service ElaBluetoothPublicService {
 You can find all the information about he API and object here.
 
 Through the function available in the API, we can describe the state machine associated to the **Bluetooth Base Microservice**. 
-<image state machine>
+<p align="center">
+  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Microservices_Main_archi_2021.png">
+</p>
   
 The following schematics describe all the state:
 - **Pending**: This is the initial state of the service, when no action has been triggered the service is in Pending State.
