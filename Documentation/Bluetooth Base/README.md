@@ -1,6 +1,6 @@
 # ELA Bluetooth Base Microservice
 
-Here, you will find all the informations relatives to the **Bluetooth Base Microservice** developped by ELA Innovation. Once the installation complete, this microservice allow you to use the bluetooth layer from your device to release simple functions like scanning or connecting to an **ELA Blue Device**. 
+Here, you will find all the informations relatives to the **Bluetooth Base Microservice** developped by ELA Innovation. Once the installation complete, this microservice allow you to use the bluetooth layer from your device to release simple functions like scanning or connecting to an **ELA Blue Device**.
 
 ## Service Description
 We implement on server side a service which deal with the bluetooth layer of your computer to scan and connect **ELA Blue Device**. The main functionnalities we expose through our API allow a user to:
@@ -65,4 +65,6 @@ To explain how the authentication works, the schematics below explain how to use
 <p align="center">
   <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png">
 </p>
+
+If you don't use the nuget provided by ELA Innocation, you need to implement the authentication mecanisms on your side to handle the target session token to fulfill in your API call. To understand how it works, you can follow this link **TODO_MAT**
 
