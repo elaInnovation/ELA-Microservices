@@ -112,6 +112,7 @@ Before starting the deployment using **docker-compose**, you need to clone this 
 ### Unix
 Now all components are installed, we can use **docker-compose** to deploy it on your computer. Go into your clone directory where the yml file : **docker-compose.yml**. To proceed, you just need to execute the following command to deploy the requiered containers.
 ```bash
+  cd ELA-Microservices/
   docker-compose up -d
 ```
 
