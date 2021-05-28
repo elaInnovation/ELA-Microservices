@@ -44,7 +44,7 @@ You can find all the information about the API and object here.
 
 Through the function available in the API, we can describe the state machine associated to the **Bluetooth Base Microservice**. 
 <p align="center">
-  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Documentation/Bluetooth%20Base/Images/Bluetooth_StateMachine_01.png">
+  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Documentation/Wirepas%20Base/Images/Wirepas_Service_State_Machine_01.PNG">
 </p>
 
 We keep all this functionnalities as simple as possible. The API as only the following function:
@@ -52,10 +52,6 @@ We keep all this functionnalities as simple as possible. The API as only the fol
 - **Subscribed**: The subscription for requested topic is done 
 - **Published**: A requested topic has been published 
 - **Publishing**: Sent a command to the tag as a publish request, not yet published 
-
-<p align="center">
-  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Wirepas_Microservice_archi_2021.png">
-</p>
 
 ## Authentication
 To use the different function from the API, you need use the authentication function provided in the Wirepas Base API. Two function are here to do the authentication job:
