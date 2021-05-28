@@ -38,7 +38,7 @@ You can find all the information about the API and object here.
 
 Through the function available in the API, we can describe the state machine associated to the **Bluetooth Base Microservice**. 
 <p align="center">
-  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Documentation/Wirepas%20Base/Images/Wirepas_Service_StateèMachine_01.PNG">
+  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Documentation/Bluetooth%20Base/Images/Bluetooth_StateMachine_01.png">
 </p>
   
 The following schematics describe all the state:
