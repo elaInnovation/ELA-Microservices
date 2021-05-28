@@ -159,7 +159,7 @@ But if you are not familiar with Microsoft technologes, you can use the favorite
 ### Microservice Description
 For each service provided by ELA innovation, we will give you a complete description associated to the service and how to interract with it on client side. For more information, you can follow the different links:
 - [Bluetooth Base Description](https://github.com/elaInnovation/ELA-Microservices/blob/master/Documentation/Bluetooth%20Base/README.md)
-- Wirepas Base Description
+- [Wirepas Base Description](https://github.com/elaInnovation/ELA-Microservices/blob/master/Documentation/Wirepas%20Base/README.md)
 
 ### API Description
 Here we are, you can find all information relative to each service by following the different link below according to the module you want interract with.
