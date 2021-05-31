@@ -67,11 +67,6 @@ service ElaWirepasPublicService {
 }
 ```
 
-To explain how the authentication works, the schematics below explain how to use the connect and disconnect function to access to the function from the API. Between a connect and disconnect, your session token is available and you can use it to access to all the function. Otherwise, after disconnection or before connection, you cannot access to the functions.
-<p align="center">
-  <img width="650" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png">
-</p>
-
-If you don't use the nuget provided by ELA Innocation, you need to implement the authentication mecanisms on your side to handle the target session token to fulfill in your API call. To understand how it works, you can follow this link **TODO_MAT**
+You will find all information relative to authentication [here](https://github.com/elaInnovation/ELA-Microservices/tree/master/Documentation/Authentication).
 
 [here_wirepas_github]: https://github.com/wirepas
