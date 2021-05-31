@@ -71,6 +71,8 @@ The **Authentication Module** has no public interface and you won't connect dire
   <img width="460" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png">
 </p>
 
+You will find all information relative to authentication [here](https://github.com/elaInnovation/ELA-Microservices/tree/master/Documentation/Authentication).
+
 ## Docker
 We use docker to package our application or microservices and its dependencies in a virtual container that can run on Linux computer (more compatibilities will be provided soon). We don't provide here a full docker tutorial, for more details or if you are not familiar with this tool, please refer to the docker [documentation here][here_docker_documentation].
 
