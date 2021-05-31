@@ -72,6 +72,9 @@ The follwing sample show you how to initialte a connection with the **Connect** 
 		login = "<my_ela_login>",
 		certificate = "<my_ela_password>"
 	};
+	//
+	// [...]
+	//	
 ```
 
 Here we are, we create the base request to connect to the **Bluetooth Base Module** and try to authenticate. Note that for the **login** and **password**, you have to replace **"<my_ela_login>"** and **"<my_ela_password>"** by your own parameters. Now with the fill object, we can call the Connect function:
@@ -105,11 +108,37 @@ Now, you need to store your **session Id** like we do with **strInternalSessionI
 		client_id = "My_Client_Id_01,
 		session_id = strInternalSessionId,
 		request_id = "Request_0000002",
-		client_ip_address = String.empty
+		client_ip_address = String.Empty
 	};
 	//
-	ElaError error = bleClient.StartBluetoothListening(request);
+	ElaError errorStart = bleClient.StartBluetoothListening(request);
 	//
 	// [...]
 	//
 ```
+
+Of course you can call any function from the API with the same session Id. For each request, you have to feed with your **session Id** the **ElaInputBaseRequest**. This parameter is the same as long as you do not call the function **Disconnect**. The sample below call the function **GetResult** and **StopBluetoothListening**.
+```C#
+	//
+	List<ElaBluetoothScanResultItem> resuls_items = new List<ElaBluetoothScanResultItem>();
+	ElaInputBaseRequest getRequest = new ElaInputBaseRequest() {
+		client_id = "My_Client_Id_01,
+		session_id = strInternalSessionId,
+		request_id = "Request_0000003",
+		client_ip_address = String.Empty
+	};
+	// To get the result from scanner
+	ElaBluetoothScanResults result = bleClient.GetScannedDevices(getRequest);
+	//
+	// stop the scanner
+	ElaInputBaseRequest stopRequest = new ElaInputBaseRequest() {
+		client_id = "My_Client_Id_01,
+		session_id = strInternalSessionId,
+		request_id = "Request_0000004",
+		client_ip_address = String.Empty
+	};
+	//
+	ElaError error = this.m_bleClient.StopBluetoothListening(stopRequest);
+```
+
+When you finish all oepration, call the function **Disconnect**. Your **session Id** created with the function connect will be released. So, if you use the same code to start the scanner again and get the result, the **ElaError** object will return with an explicit error as ACCESS DENIED.
