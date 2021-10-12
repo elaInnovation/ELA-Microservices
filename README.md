@@ -175,6 +175,7 @@ Here we are, you can find all information relative to each service by following 
 ### Samples
 Find sample on ELA Innovation Github repository.
 - [Bluetooth Base Samples](https://github.com/elaInnovation/Bluetooth-Microservice-Samples)
+- [Wirepas Base Samples](https://github.com/elaInnovation/Wirepas-Microservice-Sample)
 
 [here_ela_website]: https://elainnovation.com
 
