@@ -21,7 +21,7 @@ This repository explain how to deploy and use ELA Microservices. In this reposit
 ## Introduction
 ELA developped different microservices to create interfaces with the hardware provided. You can find all usefull informations in our products by visiting our website [here][here_ela_website]. But once you get the products, you can find here something helping you to integrate and get the information from our devices. By using our [github][here_ela_github], you can find samples in different langage to understand how you can integrate it on your side. But we provided two some [docker][here_ela_docker] to get our microservices on different technologies to garantee to get the information from our tags.
 
-You can find a first presentation as a Webinar on the ELA youtube channel [here](www.youtube.com/watch?v=4XbnzHzUtQg&t=0s). In this first video, find a first presentation of what are the Microservices. 
+You can find a first presentation as a Webinar on the ELA youtube channel [here][here_ela_webinar_video]. In this first video, find a first presentation of what are the Microservices. 
 
 If you are a developper and you want to go further in the integration, you are in the right place.
 
@@ -191,3 +191,5 @@ Find sample on ELA Innovation Github repository.
 [here_raspbian]: https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit
 
 [here_ela_nuget]: https://www.nuget.org/profiles/elaInnovation
+
+[here_ela_webinar_video]: www.youtube.com/watch?v=4XbnzHzUtQg&t=0s
