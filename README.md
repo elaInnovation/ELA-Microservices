@@ -192,4 +192,4 @@ Find sample on ELA Innovation Github repository.
 
 [here_ela_nuget]: https://www.nuget.org/profiles/elaInnovation
 
-[here_ela_webinar_video]: www.youtube.com/watch?v=4XbnzHzUtQg&t=0s
+[here_ela_webinar_video]: https://www.youtube.com/watch?v=4XbnzHzUtQg
