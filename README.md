@@ -66,9 +66,13 @@ This service needs a broker MQTT deployed where data are provided by Wirepas Gat
 You can find all the documentation, datasheet, functionnalities available from our **Blue Mesh Devices** directly on our [website][here_ela_website].
 
 ### Authentication
-The **Authentication Module** has no public interface and you won't connect directly to the module. However is presence allow you to use the API from the other module (Bluetooth, Wirepas ...). Before calling any function, you have to call the function Connect from an API (provided for each module) to allow your application to use the entire API. The shematics below show different call to the bluetooth module. 
+The **Authentication Module** has no public interface and you won't connect directly to the module. However its presence allows you to use the API from the other module (Bluetooth, Wirepas ...). Before calling any function, you have to call the function Connect from an API (provided for each module) to allow your application to use the entire API. The shematics below show different call to the bluetooth module. 
 - Calling the function **StartBluetoothListening** without calling **Connect** will return you an error code ACCESS DENIED
-- Before Calling any function you have call **Connect** function with your identifiant to authenticate and use each function from the API 
+- Before Calling any function you have call **Connect** function with your identifiant to authenticate and use each function from the API
+
+After deployment, you can first login with these embedded default credentials:
+ElaTrustedUser
+E1999l42A
 
 <p align="center">
   <img width="460" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png">
