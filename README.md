@@ -70,13 +70,14 @@ The **Authentication Module** has no public interface and you won't connect dire
 - Calling the function **StartBluetoothListening** without calling **Connect** will return you an error code ACCESS DENIED
 - Before Calling any function you have call **Connect** function with your identifiant to authenticate and use each function from the API
 
-After deployment, you can first login with these embedded default credentials:
-ElaTrustedUser
-E1999l42A
-
 <p align="center">
   <img width="460" src="https://github.com/elaInnovation/ELA-Microservices/blob/master/Images/ELA_Authentication_Work_01.png">
 </p>
+
+After deployment, you can first login with these embedded default credentials:
+| Login    | Password |
+| -------- | ------- |
+| ElaTrustedUser  | E1999l42A    |
 
 You will find all information relative to authentication [here](https://github.com/elaInnovation/ELA-Microservices/tree/master/Documentation/Authentication).
 
